@@ -1,0 +1,42 @@
+<section id="home">
+    <div class="home-logo">
+        <img src="{{imgLogo}}" alt="logo du site">
+    </div>
+    <div class="home-wrapper">
+        <div class="home-left">
+            <div class="home-title">
+                <h1>Explore the best camps of Earth.</h1>
+            </div>
+            <div class="home-content">
+                <p>YelpCamp is à currated list of the best camping spots on Earth.
+                    Unfiltered and unbiaised reviews.
+                </p>
+                <p><span class="checkmark"><i class="fa-solid fa-circle-check"></i></span> Add your one camp
+                    suggestions.</p>
+                <p><span class="checkmark"><i class="fa-solid fa-circle-check"></i></span> Leave reviews and
+                    experiences.</p>
+                <p><span class="checkmark"><i class="fa-solid fa-circle-check"></i></span> See locations for all camps.
+                </p>
+                <button class="btn-primary">View Campgroungs</button>
+            </div>
+            <div class="home-partenaires">
+                <p>Partnered with:</p>
+                <div class="home-partenaires__liste">
+                    <span *ngFor="let partnered of partneredList">
+                        <img src="{{partnered}}" alt="logo des partenaires">
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="home-right">
+            <picture>
+
+                <source media="(max-width: 992)" srcset="{{imgHomeMobTab}}">
+                <!-- <source media="(min-width: 320px)" srcset="{{imgHomeRight}}"> -->
+                <!-- <img src="{{imgHomeScreen}}" alt="image de la page d'accueil"> -->
+            </picture>
+        </div>
+    </div>
+
+</section>
