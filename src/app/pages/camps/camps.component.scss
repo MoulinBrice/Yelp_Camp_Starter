@@ -1,0 +1,38 @@
+.camps-search__wrapper{
+    background-color: var(--color-secondary);
+    border-radius: 5px;
+    padding: 40px 50px;
+}
+.camps-search__description{
+    width: 410px;
+    font-size: 1.1rem;
+}
+
+.camps-search__form{
+    p{
+        margin-top: 20px;
+         a{
+        color: var(--color-primary);
+        text-decoration: underline;
+    }
+    }
+
+}
+.camps-search__form-content{
+    display: flex;
+
+    .form-group{
+        margin-right: 20px;
+    }
+    input{
+        height: 43.99px;
+    }
+    span{
+        color: var(--color-primary);
+        height: 43.99px;
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        margin-right: 10px;
+    }
+}
