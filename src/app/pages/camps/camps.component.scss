@@ -36,3 +36,60 @@
         margin-right: 10px;
     }
 }
+
+#show-camps{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.show-camps__cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    align-items: center;
+    justify-items: center;
+}
+
+// ########################################################################
+// ########################################################################
+// TABLETTE
+@media screen and (max-width: 768px) {
+    .wrap{
+        padding: 0 30px;
+    }
+    .camps-search__wrapper{
+        padding: 20px 30px;
+    }
+
+    .camps-search__description{
+        width: 100%;
+        font-size: 1rem;
+    }
+    // .camps-search__form{
+    //     width: 100%;
+    //     margin-top: 20px;
+    //     p{
+    //         font-size: 0.8rem;
+    //     }
+    // }
+    // .camps-search__form-content{
+    //     flex-direction: column;
+    //     .form-group{
+    //         margin-right: 0;
+    //         margin-bottom: 20px;
+    //     }
+    //     input{
+    //         width: 100%;
+    //     }
+    //     span{
+    //         font-size: 1rem;
+    //     }
+    // }
+    // #show-camps{
+    //     margin-top: 20px;
+    //     margin-bottom: 20px;
+    // }
+    // .show-camps__cards{
+    //     grid-template-columns: repeat(1, 1fr);
+    // }
+
+}

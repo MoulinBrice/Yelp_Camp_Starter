@@ -17,7 +17,8 @@
                     experiences.</p>
                 <p><span class="checkmark"><i class="fa-solid fa-circle-check"></i></span> See locations for all camps.
                 </p>
-                <button class="btn-primary">View Campgroungs</button>
+                <a [routerLink]="['/camps']" class="btn-primary">view Campgroungs</a>
+                <!-- <button class="btn-primary">View Campgroungs</button> -->
             </div>
             <div class="home-partenaires">
                 <p>Partnered with:</p>
@@ -30,12 +31,7 @@
             </div>
         </div>
         <div class="home-right">
-            <picture>
 
-                <source media="(max-width: 992)" srcset="{{imgHomeMobTab}}">
-                <!-- <source media="(min-width: 320px)" srcset="{{imgHomeRight}}"> -->
-                <!-- <img src="{{imgHomeScreen}}" alt="image de la page d'accueil"> -->
-            </picture>
         </div>
     </div>
 

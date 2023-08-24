@@ -28,3 +28,15 @@
         </div>
     </div>
 </section>
+<section id="show-camps">
+    <div class="wrap">
+        <div class="show-camps__cards">
+            <div *ngFor="let camp of campList">
+                <app-campcard [camp]="camp"></app-campcard>
+            </div>
+        </div>
+
+    </div>
+</section>
+<app-footer></app-footer>
+

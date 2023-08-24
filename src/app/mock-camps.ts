@@ -47,7 +47,9 @@ export const CAMPS: Camp[] = [
         description: 'Latik Riverside is a group of islands in the Philippine province of Camarines Norte. It includes the major islands of Tinaga Island and Guintinua Island, the minor Maculabo Island, as well as several other minor islands.',
         price: 350,
         image: '/assets/Camp Images/Compressed Images/Latik Riverside.jpg',
-        devise:'$'
+        devise:'$',
+        created_at: new Date(),
+        update_at: new Date()
     },
     {
         id: 6,
