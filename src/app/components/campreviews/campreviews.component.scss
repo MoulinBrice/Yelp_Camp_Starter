@@ -1,0 +1,52 @@
+#reviews{
+    margin-top: 50px;
+    width: 100%;
+    .wrap{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
+.campreviews {
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+    padding: 40px;
+    // margin-top: 20px;
+    // width: 66%;
+}
+.campreviews-wrapper{
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-primary);
+}
+.campreview-infos{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.israted{
+    color: yellow;
+}
+
+.campreviews-new-review{
+    margin-top: 20px;
+    width: 200px;
+}
+.campreviews-new-review a{
+    display: flex;
+    align-items: center;
+
+    p{
+        margin:0 0 0 10px;
+        color: white;
+    }
+
+}
+
+//#####################################################################
+//#####################################################################
+//MOBILE
+@media screen and (max-width: 480px) {
+    .campreview-infos{
+        font-size: .8rem;
+    }
+}

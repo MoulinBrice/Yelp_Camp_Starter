@@ -1,0 +1,40 @@
+.wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // height: 60vh;
+}
+
+.camp-new__wrapper{
+    h1{
+        margin-bottom: 15px;
+    }
+    p{
+        margin:16px 0;
+    }
+    input, textarea{
+        background-color: var(--color-secondary);
+        border-radius: 5px;
+    }
+}
+
+.form-btn-submit{
+    button{
+        margin-top: 20px;
+    }
+}
+
+//##############################################################################
+//##############################################################################
+//TABLETTE
+
+@media (max-width: 768px) {
+    .wrap{
+        padding: 0 30px;
+        justify-content: start;
+    }
+    .camp-new__wrapper{
+        width: 100%;
+    }
+
+}

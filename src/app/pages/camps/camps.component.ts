@@ -16,8 +16,8 @@ export class CampsComponent implements OnInit{
   constructor(private campsService: CampsService) { };
 
   ngOnInit() {
-    this.campsService.getCamps().subscribe((camps: Camp[]|void) => {console.table(camps); return this.campList = camps})
-    console.table(this.campList);
+    this.campsService.getCamps().subscribe((camps: Camp[]|void) => {return this.campList = camps})
+    // console.table(this.campList);
   }
 
 }

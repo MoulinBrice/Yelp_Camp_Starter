@@ -1,0 +1,67 @@
+
+
+.camp-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0 40px;
+
+    .camp-left, .camp-right__wrapper{
+        border: 1px solid var(--color-primary);
+        border-radius: 5px;
+        padding: 40px;
+    }
+
+    .camp-left{
+
+        img{
+            // width: 100%;
+            border-radius: 5px;
+        }
+    };
+    .camp-right{
+        // width:57%;
+
+        img{
+            width: 100%;
+        }
+        .camp-infos{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+    };
+
+
+}
+
+//##############################################################################
+//##############################################################################
+//TABLETTE
+
+@media (max-width: 768px) {
+    .wrap{
+        padding: 0 30px;
+    }
+    .camp-wrapper{
+        flex-direction: column;
+        gap: 20px 0;
+        .camp-left, .camp-right__wrapper{
+            padding: 20px;
+        }
+    }
+    .camp-left{
+        order: 2;
+        width: 100%;
+        padding: 80px;
+        img{
+            width: 100%;
+        }
+    }
+    .camp-right{
+        width: 100%;
+    }
+}

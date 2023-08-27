@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<section id="camp">
+    <div class="wrap">
+        <div class="camp-wrapper">
+            <div class="camp-left">
+                <img src="{{camp.localisation}}" alt="Map.png">
+            </div>
+            <div class="camp-right">
+                <div class="camp-right__wrapper">
+                    <img src="{{camp.image}}" alt="photo du site">
+                    <div class="camp-infos">
+                        <h5>{{camp.name}}</h5>
+                        <p><strong>{{camp.devise}}{{camp.price}}/night</strong></p>
+                    </div>
+                    <div class="camp-content">
+                        <p>{{camp.description}}</p>
+                        <p>Submitted by {{camp.submitter}}</p>
+                    </div>
+                </div>
+                <app-campreviews idCamp="{{camp.id}}"> </app-campreviews>
+            </div>
+        </div>
+    </div>
+
+</section>
+<app-footer></app-footer>
+

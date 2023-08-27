@@ -6,7 +6,7 @@
         <div class="camp-card__content__info">
             <h5>{{camp.name}}</h5>
             <p>{{camp.description}}</p>
-            <a href="#">View Campground</a>
+            <a [routerLink]="['/camps', camp.id]">View Campground</a>
         </div>
     </div>
 </section>

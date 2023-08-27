@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<section id="camp-new">
+    <div class="wrap">
+        <div class="camp-new__wrapper">
+            <h1>Add New Campground</h1>
+            <form action="">
+                <div class=" form-group form-content">
+                    <p>Campground Name</p>
+                    <input type="text" name="name" id="name" class="form-control" required placeholder="Campground Name"
+                        [(ngModel)]="newCamp.name">
+                    <p>Price</p>
+                    <input type="number" name="price" id="price" class="form-control" required placeholder="Price"
+                        [(ngModel)]="newCamp.price">
+                    <p>Image</p>
+                    <input type="text" name="image" id="image" class="form-control" required
+                        placeholder="Link of the Image" [(ngModel)]="newCamp.image">
+                    <p>Description</p>
+                    <textarea name="description" id="description" cols="50" rows="10" class="form-control" required
+                        placeholder="Description" [(ngModel)]="newCamp.description"></textarea>
+                    <div class="form-btn-submit">
+                        <button type="submit" class="btn-primary">Add Campground</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

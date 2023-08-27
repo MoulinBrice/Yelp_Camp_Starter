@@ -1,0 +1,28 @@
+<section id="reviews">
+    <!-- <div class="wrap"> -->
+        <div class="campreviews">
+            <div *ngFor="let review of ReviewsUser" class="campreviews-wrapper">
+                <div class="campreview-infos">
+                    <h5>{{review.user.name}}</h5>
+                    <p><strong>{{review.created_at|date : 'short'}}</strong></p>
+                </div>
+                <div class="campreview-content">
+                    <p>{{review.text}}</p>
+                    <div class="campreviews-rating">
+                        <span [ngClass]="{israted: review.rating>=1}"><i class="fa-solid fa-star"></i></span>
+                        <span [ngClass]="{israted: review.rating>=2}"><i class="fa-solid fa-star"></i></span>
+                        <span [ngClass]="{israted: review.rating>=3}"><i class="fa-solid fa-star"></i></span>
+                        <span [ngClass]="{israted: review.rating>=4}"><i class="fa-solid fa-star"></i></span>
+                        <span [ngClass]="{israted: review.rating===5}"><i class="fa-solid fa-star"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="campreviews-new-review">
+                <a [routerLink]="urlNewReview" class="btn-primary">
+                   <img src="/assets/Chat Bubble.svg" alt="icone de message">
+                    <p>Leave a review</p>
+                </a>
+            </div>
+        </div>
+    <!-- </div> -->
+</section>

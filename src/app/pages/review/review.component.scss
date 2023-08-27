@@ -1,0 +1,55 @@
+.wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+.review-wrapper{
+    width: 50%;
+}
+
+.form-content{
+    display: flex;
+    flex-direction: column;
+    textarea{
+        background-color: var(--color-secondary);
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+}
+
+.form-rating{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    p{
+        margin: 0 10px;
+    }
+    select{
+        width: 80px;
+    }
+}
+.form-btn-submit{
+    border-top: 1px solid var(--color-primary);
+    padding-top: 20px;
+
+    button{
+        width: 100%;
+    }
+}
+
+//##############################################################################
+//##############################################################################
+//TABLETTE
+
+@media (max-width: 768px) {
+    .wrap{
+        padding: 0 30px;
+        justify-content: start;
+    }
+    .review-wrapper{
+        width: 100%;
+    }
+
+}
