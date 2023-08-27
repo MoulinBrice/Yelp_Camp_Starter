@@ -5,6 +5,13 @@
     position: absolute;
     top: 50px;
     left: 200px;
+
+    a:last-child{
+        margin-left: 230px;
+        color: var(--color-primary);
+        cursor: pointer;
+    }
+
 }
 .signup-wrapper{
     display: flex;
@@ -37,7 +44,21 @@
             width: 100%;
             button{
                 width: 100%;
-            }   
+            }
+        }
+    }
+
+    .signup-allready{
+        margin-top: 20px;
+        p{
+            margin: 0;
+
+        }
+        a{
+            color: var(--color-tertiary);
+            font-weight: 700;
+            text-decoration: underline;
+            margin-left: 10px;
         }
     }
 

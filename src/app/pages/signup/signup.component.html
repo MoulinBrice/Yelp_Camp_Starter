@@ -1,6 +1,7 @@
 <section id="signup">
     <div class="signup-logo">
         <a [routerLink]="'/'"> <img src="{{imgLogo}}" alt="logo du site"></a>
+        <a (click)="gobak()"><i class="fa-solid fa-arrow-left-long"></i> Back to campgrounds</a>
     </div>
     <div class="signup-wrapper">
         <div class="signup-left">
@@ -18,7 +19,7 @@
                     </div>
                 </form>
             </div>
-            <p>Already a user?</p>
+            <p class="signup-allready">Already a user? <a href="">Sign In</a> </p>
 
         </div>
         <div class="signup-right">
@@ -34,8 +35,6 @@
                         <p>Professional Hiker</p>
                     </div>
                 </div>
-
-
             </div>
 
         </div>

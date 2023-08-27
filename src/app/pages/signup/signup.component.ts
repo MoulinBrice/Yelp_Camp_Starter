@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -9,4 +10,10 @@ export class SignupComponent {
 
   imgLogo = 'assets/Logo.svg';
   imgAvatar = 'assets/User Testimonial.svg';
+
+  constructor(private Router: Router) { }
+  
+  gobak() {
+    this.Router.navigate(['/camps']);
+  }
 }
