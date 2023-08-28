@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ReviewsService } from 'src/app/services/reviews.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { Review } from 'src/app/review';
 
@@ -13,6 +14,11 @@ export class ReviewComponent implements OnInit {
 newReview: any;
 userId: number=0;
 idCamp: number=0;
+
+reviewForm: FormGroup = new FormGroup({
+  text: new FormControl('',[Validators.required, Validators.minLength(3), Validators.maxLength(100)]),
+  rating: new FormControl('',[Validators.required]),
+});
 
   constructor(
     private route: ActivatedRoute,

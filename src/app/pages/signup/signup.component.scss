@@ -36,6 +36,7 @@
             width: 100%;
             background-color: var(--color-secondary);
             border: none;
+            // border-color: var(--color-secondary);
             border-radius: 5px;
             padding: 10px;
         }
@@ -98,4 +99,60 @@
         }
 
     }
+}
+.form-signup{
+    small{
+        color: red;
+    }
+}
+
+.ng-invalid:not(form){
+    border: solid;
+    border: 1px solid red;
+}
+
+//##############################################################################
+//##############################################################################
+//TABLETTE
+
+@media (max-width: 768px) {
+    .wrap{
+        padding: 0 30px !important;
+    }
+    .signup-logo{
+        top: 40px;
+        left: 20px;
+        right: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        a:last-child{
+            margin:0 40px 0 0;
+        }
+
+     }
+
+    .signup-wrapper{
+        flex-direction: column;
+        .signup-left, .signup-right{
+            padding: 20px;
+        }
+    }
+
+    .signup-left{
+        width: 100%;
+        align-items: start;
+        margin-top: 80px;
+
+    }
+    .signup-right{
+        width: 100%;
+        justify-content: flex-start;
+        height: auto;
+
+        .signup-right__content{
+            padding: 20px;
+        }
+    }
+
 }

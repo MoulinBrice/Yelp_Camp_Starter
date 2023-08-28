@@ -6,28 +6,29 @@
                 <h1>Add new comment</h1>
                 <p>Description</p>
             </div>
-            <form (ngSubmit)="onSubmit()" #reviewForm="ngForm">
+            <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
                 <div class=" form-group form-content">
-                    <textarea name="text-review" id="text-review" cols="50" rows="10"
-                    class="form-control"
-                    required
+                    <textarea name="text" id="text" cols="50" rows="10"
                     placeholder="Write your comment here"
-                    [(ngModel)]="newReview.text"></textarea>
+                    formControlName="text"></textarea>
+
                     <p>Your opinion</p>
                     <div class="form-rating">
                         <i class="fa-solid fa-star" [ngStyle]="{color:'yellow'}"></i>
                         <p>Rating</p>
-                        <select name="rating" id="rating" [(ngModel)]="newReview.rating" required class="form-control">
+                        <select name="rating" id="rating" name="rating" formControlName="rating">
                             <option value="1" selected >1 star</option>
                             <option value="2">2 stars</option>
                             <option value="3">3 stars</option>
                             <option value="4">4 stars</option>
                             <option value="5">5 stars</option>
                         </select>
+
                         <input type="hidden" name="userId" id="userId" value=""
-                        [(ngModel)]="newReview.userId">
+                        formControlName="userId">
+
                         <input type="hidden" name="campId" id="campId" value={{idCamp}}
-                        [(ngModel)]="newReview.campId">
+                        formControlName="campId">
 
                     </div>
                     <div class="form-btn-submit">

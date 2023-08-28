@@ -1,7 +1,7 @@
 <section id="signup">
     <div class="signup-logo">
         <a [routerLink]="'/'"> <img src="{{imgLogo}}" alt="logo du site"></a>
-        <a (click)="gobak()"><i class="fa-solid fa-arrow-left-long"></i> Back to campgrounds</a>
+        <a (click)="goback()"><i class="fa-solid fa-arrow-left-long"></i> Back to campgrounds</a>
     </div>
     <div class="signup-wrapper">
         <div class="signup-left">
@@ -9,18 +9,32 @@
                 <h1>Start exploring camps from all around the world.</h1>
             </div>
             <div class="signup-content">
-                <form class="form-signup">
+                <form [formGroup]="signupForm" (submit)="onSubmit()" class="form-signup">
+
                     <p>Username</p>
-                    <input type="text" placeholder="Johndoe_972">
+                    <input type="text" placeholder="*Johndoe_972" id="name" name="name"
+                    formControlName="name">
+                    <small *ngIf="nameControl?.hasError('minlength') &&
+                    nameControl?.touched">*your name is invalid</small>
+
+                    <p>Email</p>
+                    <input type="email" placeholder="Johndoe_972@gmail.com" id="email" name="email"
+                    formControlName="email">
+                    <small *ngIf="emailControl?.hasError('pattern') &&
+                    emailControl?.touched">*the email is not valid</small>
+
                     <p>Password</p>
-                    <input type="password" placeholder="********">
+                    <input type="password" placeholder="********" id="password" name="password"
+                    formControlName="password">
+                    <small *ngIf="passwordControl?.hasError('minlength') &&
+                    passwordControl?.touched">*Your password is invalid</small>
+
                     <div class="form-btn-submit">
                         <button type="submit" class="btn-primary">Create an account</button>
                     </div>
                 </form>
             </div>
             <p class="signup-allready">Already a user? <a href="">Sign In</a> </p>
-
         </div>
         <div class="signup-right">
             <div class="signup-right__content">
@@ -36,7 +50,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
