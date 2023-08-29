@@ -12,20 +12,19 @@
                 <form [formGroup]="signupForm" (submit)="onSubmit()" class="form-signup">
 
                     <p>Username</p>
-                    <input type="text" placeholder="*Johndoe_972" id="name" name="name"
-                    formControlName="name">
+                    <input type="text" placeholder="*Johndoe_972" id="name" name="name" formControlName="name">
                     <small *ngIf="nameControl?.hasError('minlength') &&
                     nameControl?.touched">*your name is invalid</small>
 
                     <p>Email</p>
                     <input type="email" placeholder="Johndoe_972@gmail.com" id="email" name="email"
-                    formControlName="email">
+                        formControlName="email">
                     <small *ngIf="emailControl?.hasError('pattern') &&
                     emailControl?.touched">*the email is not valid</small>
 
                     <p>Password</p>
                     <input type="password" placeholder="********" id="password" name="password"
-                    formControlName="password">
+                        formControlName="password">
                     <small *ngIf="passwordControl?.hasError('minlength') &&
                     passwordControl?.touched">*Your password is invalid</small>
 
@@ -34,14 +33,23 @@
                     </div>
                 </form>
             </div>
-            <p class="signup-allready">Already a user? <a href="">Sign In</a> </p>
+            <p class="signup-allready">Already a user? <a [routerLink]="'/signin'">Sign In</a> </p>
+            <!-- message flash -->
+            <div *ngIf="isKnowingUser" class="flash-message">
+                <img src="{{imgClose}}" alt="icone de fermeture" (click)="resetForm()">
+                <div class="flash-content">
+                    <p>{{flashMessage}}</p>
+                    <span><i class="fa-solid fa-ban"></i></span>
+                </div>
+
+            </div>
         </div>
         <div class="signup-right">
             <div class="signup-right__content">
                 <p><q>
-                    YelpCamp has honestly saved me hour of researsh time, and the camps on here are
-                    definitely well picked and added.
-                </q></p>
+                        YelpCamp has honestly saved me hour of researsh time, and the camps on here are
+                        definitely well picked and added.
+                    </q></p>
                 <div class="signup-right__author">
                     <img src="{{imgAvatar}}" alt="avatar de l'auteur">
                     <div class="signup-right__author-info">

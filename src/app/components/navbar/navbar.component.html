@@ -12,7 +12,7 @@
                 </nav>
                 <div class="connexion">
                     <ul>
-                        <li><a href="#">Login</a></li>
+                        <li><a [routerLink]="'/signin'">Login</a></li>
                     </ul>
                     <button class="btn-primary" (click)="goToSignUp()">Create an account</button>
                 </div>
@@ -25,9 +25,9 @@
         <div [ngClass]="{'navbar-sd-menu__menu':true, 'display-menu':showSousMenu}">
         <!-- <div class="navbar-sd-menu__menu display-menu"> -->
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Create a account</a></li>
+                <li><a [routerLink]="'/'">Home</a></li>
+                <li><a [routerLink]="'/signin'">Login</a></li>
+                <li><a [routerLink]="'signup'">Create a account</a></li>
             </ul>
         </div>
     </div>

@@ -1,0 +1,58 @@
+<section id="signin">
+    <div class="signin-logo">
+        <a [routerLink]="'/'"> <img src="{{imgLogo}}" alt="logo du site"></a>
+        <a (click)="goback()"><i class="fa-solid fa-arrow-left-long"></i> Back to campgrounds</a>
+    </div>
+    <div class="signin-wrapper">
+        <div class="signin-left">
+            <div class="signin-title">
+                <h1>Start exploring camps from all around the world.</h1>
+            </div>
+            <div class="signin-content">
+                <form [formGroup]="signinForm" (submit)="onSubmit()" class="form-signin">
+
+                    <p>Email</p>
+                    <input type="email" placeholder="Johndoe_972@gmail.com" id="email" name="email"
+                    formControlName="email">
+                    <small *ngIf="emailControl?.hasError('pattern') &&
+                    emailControl?.touched">*Email missing</small>
+
+                    <p>Password</p>
+                    <input type="password" placeholder="********" id="password" name="password"
+                    formControlName="password">
+                    <small *ngIf="passwordControl?.hasError('required') &&
+                    passwordControl?.touched">*Password missing</small>
+
+                    <div class="form-btn-submit">
+                        <button type="submit" class="btn-primary">Login</button>
+                    </div>
+                </form>
+            </div>
+            <p class="signin-allready">Not a user yet? <a [routerLink]="'/signup'">Create an account</a> </p>
+            <!-- message flash -->
+            <div *ngIf="showMessageFlash" class="flash-message">
+                <img src="{{imgClose}}" alt="icone de fermeture" (click)="resetForm()">
+                <div class="flash-content">
+                    <p>{{flashMessage}}</p>
+                    <span><i class="fa-solid fa-ban"></i></span>
+                </div>
+
+            </div>
+        </div>
+        <div class="signin-right">
+            <div class="signin-right__content">
+                <p><q>
+                    YelpCamp has honestly saved me hour of researsh time, and the camps on here are
+                    definitely well picked and added.
+                </q></p>
+                <div class="signin-right__author">
+                    <img src="{{imgAvatar}}" alt="avatar de l'auteur">
+                    <div class="signin-right__author-info">
+                        <p>May Andrews</p>
+                        <p>Professional Hiker</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

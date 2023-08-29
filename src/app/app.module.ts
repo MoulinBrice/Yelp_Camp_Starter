@@ -15,6 +15,7 @@ import { CampreviewsComponent } from './components/campreviews/campreviews.compo
 import { ReviewComponent } from './pages/review/review.component';
 import { CampNewComponent } from './pages/camp-new/camp-new.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { SigninComponent } from './pages/signin/signin.component';
 
 
 
@@ -31,6 +32,7 @@ import { SignupComponent } from './pages/signup/signup.component';
     ReviewComponent,
     CampNewComponent,
     SignupComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,

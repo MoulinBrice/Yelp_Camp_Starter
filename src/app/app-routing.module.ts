@@ -6,6 +6,7 @@ import { CampComponent } from './pages/camp/camp.component';
 import { ReviewComponent } from './pages/review/review.component';
 import { CampNewComponent } from './pages/camp-new/camp-new.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { SigninComponent } from './pages/signin/signin.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'camps/:id/review', component: ReviewComponent},
   { path: 'new-camp', component: CampNewComponent},
   { path: 'signup', component: SignupComponent},
+  { path: 'signin', component: SigninComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 
 ];
