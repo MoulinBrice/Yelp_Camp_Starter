@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-
 import { UsersService } from '../../services/users.service';
 import { User } from '../../user';
 
@@ -17,6 +16,8 @@ export class SigninComponent {
   imgClose = 'assets/Close.svg';
   showMessageFlash = false;
   flashMessage = '';
+  islogedIn = false;
+  connexionHour:any
 
   user: User = {
     id: 0,
@@ -51,25 +52,35 @@ export class SigninComponent {
   }
 
   onSubmit() {
-    if (this.signinForm.valid) {
+    //on vérifie si l'utilisateur est déjà connecté
+    this.islogedIn = this.isLogedInLocalStorage();
+    if(this.islogedIn) {
+      this.flashMessage = 'You are already logged in';
+      this.showMessageFlash = true;
+      return;
+    }
+
+    if (this.signinForm.valid && !this.islogedIn) {
       this.user.email = this.signinForm.value.email;
       this.user.password = this.signinForm.value.password;
 
-      
-
-      // this.usersService.getUser(this.user.email).subscribe(
-      //   (user:User[]|any) => {
-      //     if (user.length > 0) {
-      //       if (user[0].password === this.user.password) {
-      //         this.Router.navigate(['/camps']);
-      //       } else {
-      //         alert('Password incorrect');
-      //       }
-      //     } else {
-      //       alert('User not found');
-      //     }
-      //   }
-      // );
+      this.usersService.getUser(this.user.email).subscribe(
+        (user:User[]|any) => {
+          if (user.length > 0) {
+            if (user[0].password === this.user.password) {
+              //on enregistre l'utilisateur dans le local storage
+              this.usersService.setUserInLocalStorage(user[0]);
+              this.Router.navigate(['/camps']);
+            } else {
+              this.flashMessage = 'Password incorrect';
+              this.showMessageFlash = true;
+            }
+          } else {
+            this.flashMessage = 'User not found';
+            this.showMessageFlash = true;
+          }
+        }
+      );
     }
   }
 
@@ -79,12 +90,7 @@ export class SigninComponent {
   }
 
   isLogedInLocalStorage() {
-    localStorage.getItem('yelpUser')?  true :  false;
+    console.log(localStorage.getItem('yelpUser'));
+     return localStorage.getItem('yelpUser')?  true :  false;
   }
-
-  getInLocalStorage() {
-
-  }
-
-
 }

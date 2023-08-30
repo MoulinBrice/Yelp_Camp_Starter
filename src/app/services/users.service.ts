@@ -11,6 +11,8 @@ import { User } from '../user';
   providedIn: 'root'
 })
 export class UsersService {
+  LocalStorageUser: any|null;
+  connexionHour: any;
 
   constructor(private http: HttpClient) { }
 
@@ -27,6 +29,49 @@ export class UsersService {
         })
     );
   }
+
+  isLogedInLocalStorage() {
+    if(localStorage.getItem('yelpUser')) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  setUserInLocalStorage(user: User|any) {
+    console.log(user)
+    this.connexionHour = new Date();
+    const savUser = {
+      name: user.name,
+      email: user.email,
+      id: user.id,
+      connexionHour: this.connexionHour
+    }
+    console.log(savUser)
+    localStorage.setItem('yelpUser',JSON.stringify(savUser));
+  }
+
+  getUserInLocalStorage() {
+    if(localStorage.getItem('yelpUser')) {
+      this.LocalStorageUser = localStorage.getItem('yelpUser');
+      return JSON.parse(this.LocalStorageUser);
+    } else {
+      return false;
+    }
+  }
+
+  removeUserInLocalStorage() {
+    if(localStorage.getItem('yelpUser')) {
+      console.log("removeUserInLocalStorage")
+      localStorage.removeItem('yelpUser');
+    }
+  }
+
+  logOut() {
+    this.removeUserInLocalStorage()
+  }
+
+
 
 
 }

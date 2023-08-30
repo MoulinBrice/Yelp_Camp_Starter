@@ -29,6 +29,21 @@ header {
         width: 100%;
     }
 
+    .user-loged{
+        display: flex;
+        align-items: center;
+        align-self: end;
+       ul{
+        display: flex;
+        align-items: center;
+       }
+       p{
+        margin: 0;
+        text-decoration: underline;
+       }
+
+    }
+
     .connexion {
         display: flex;
         align-items: center;

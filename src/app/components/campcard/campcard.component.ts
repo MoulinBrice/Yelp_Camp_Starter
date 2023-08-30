@@ -11,7 +11,7 @@ export class CampcardComponent implements OnInit {
   @Input() camp: any;
 
   ngOnInit() {
-    console.table(this.camp);
+    // console.table(this.camp);
   }
 
 }

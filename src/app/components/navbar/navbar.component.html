@@ -10,7 +10,13 @@
                         <li><a href="#">Home</a></li>
                     </ul>
                 </nav>
-                <div class="connexion">
+                <div *ngIf="userLogedOut" class="user-loged">
+                    <ul>
+                        <li><p>{{yelpUser.name}}</p></li>
+                        <li> <a (click)="logOut()"> Logout</a></li>
+                    </ul>
+                </div>
+                <div *ngIf="userLogedIn" class="connexion">
                     <ul>
                         <li><a [routerLink]="'/signin'">Login</a></li>
                     </ul>
