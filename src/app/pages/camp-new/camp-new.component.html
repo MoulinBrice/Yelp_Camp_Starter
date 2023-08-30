@@ -3,23 +3,31 @@
     <div class="wrap">
         <div class="camp-new__wrapper">
             <h1>Add New Campground</h1>
-            <form [formGroup]="campForm" (ngSubmit)="onSubmit()">
-                <div class=" form-group form-content">
+            <form [formGroup]="newcampForm" (ngSubmit)="onSubmit()">
+                <div class="form-content">
                     <p>Campground Name</p>
-                    <input type="text" name="name" id="name" placeholder="Campground Name"
-                    formControlName="name">
+                    <input type="text" name="campName" id="campName" placeholder="Campground Name"
+                    formControlName="campName">
+                    <small *ngIf="!campNameControl?.valid &&
+                    campNameControl?.touched">*Name invalid</small>
 
                     <p>Price</p>
                     <input type="number" name="price" id="price"  placeholder="Price"
-                    formControlName="price">
+                    formControlName="campPrice">
+                    <small *ngIf="campPriceControl?.hasError('required') &&
+                    campPriceControl?.touched">*You must enter a price</small>
 
                     <p>Image</p>
-                    <input type="text" name="image" id="image" placeholder="Link of the Image"
-                    formControlName="image">
+                    <input type="text" name="campImage" id="campImage" placeholder="Link of the Image"
+                    formControlName="campImage">
+                    <small *ngIf="campImageControl?.hasError('required') &&
+                    campImageControl?.touched">*You must enter a link for the camp's picture</small>
 
                     <p>Description</p>
-                    <textarea name="description" id="description" cols="50" rows="10" placeholder="Description"
-                    formControlName="description"></textarea>
+                    <textarea name="campDescription" id="campDescription" cols="50" rows="10" placeholder="Description"
+                    formControlName="campDescription"></textarea>
+                    <small *ngIf="!campDescriptionControl?.valid &&
+                    campDescriptionControl?.touched">*Description invalid</small>
 
                     <div class="form-btn-submit">
                         <button type="submit" class="btn-primary">Add Campground</button>

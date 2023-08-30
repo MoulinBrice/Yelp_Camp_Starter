@@ -24,10 +24,13 @@ export class CampComponent {
     this.campsService.getCamp(id).subscribe(campDetails => {
        this.camp = campDetails;
        this.idCamp=this.camp.id;
+       console.log(campDetails)
     });
-
   }
 
+  goback(){
+    this.router.navigate(['/camps']);
+  }
 
 
 

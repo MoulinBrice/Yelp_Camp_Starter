@@ -6,6 +6,15 @@
 }
 .review-wrapper{
     width: 50%;
+    margin-top: 10px;
+}
+
+.goback{
+    color: var(--color-primary);
+    cursor: pointer;
+}
+.review-infos{
+    margin-top: 10px;
 }
 
 .form-content{
@@ -37,6 +46,10 @@
     button{
         width: 100%;
     }
+}
+
+small{
+    color: red;
 }
 
 //##############################################################################

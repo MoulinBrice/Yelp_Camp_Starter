@@ -2,34 +2,33 @@
 <section id="review">
     <div class="wrap">
         <div class="review-wrapper">
+            <a (click)="goback()" class="goback"><i class="fa-solid fa-arrow-left-long"></i> Back to campgrounds</a>
+
             <div class="review-infos">
                 <h1>Add new comment</h1>
                 <p>Description</p>
             </div>
             <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
                 <div class=" form-group form-content">
-                    <textarea name="text" id="text" cols="50" rows="10"
+                    <textarea name="reviewText" id="reviewText" cols="50" rows="10"
                     placeholder="Write your comment here"
-                    formControlName="text"></textarea>
+                    formControlName="reviewText"></textarea>
+                    <small *ngIf="!reviewTextControl?.valid &&
+                    reviewTextControl?.touched" >*You must enter your description</small>
 
                     <p>Your opinion</p>
                     <div class="form-rating">
                         <i class="fa-solid fa-star" [ngStyle]="{color:'yellow'}"></i>
                         <p>Rating</p>
-                        <select name="rating" id="rating" name="rating" formControlName="rating">
+                        <select name="rating" id="reviewRating" name="reviewRating" formControlName="reviewRating">
                             <option value="1" selected >1 star</option>
                             <option value="2">2 stars</option>
                             <option value="3">3 stars</option>
                             <option value="4">4 stars</option>
                             <option value="5">5 stars</option>
                         </select>
-
-                        <input type="hidden" name="userId" id="userId" value=""
-                        formControlName="userId">
-
-                        <input type="hidden" name="campId" id="campId" value={{idCamp}}
-                        formControlName="campId">
-
+                        <small *ngIf="reviewRatingControl?.hasError('required') &&
+                        reviewRatingControl?.touched" >*You must enter your rating</small>
                     </div>
                     <div class="form-btn-submit">
                          <button type="submit" class="btn-primary">Post Comment</button>

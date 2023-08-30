@@ -34,6 +34,21 @@ export class CampsService {
       map((camp: Camp|void) => {return camp}))
   }
 
+  //NEW
+  addCamp(camp: Camp): Observable<Camp|void> {
+    return this.http.post<Camp>(this.urlCampsDb, camp).pipe(
+      map((camp: Camp|void) => {return camp}))
+  }
+
+  //SEARCH
+  searchCamp(term: string): Observable<Camp[]|void> {
+    if (!term.trim()) {
+      return this.getCamps();
+    }
+    return this.http.get<Camp[]>(`${this.urlCampsDb}/?q=${term}`).pipe(
+      map((camps: Camp[]|void) => {return camps}))
+  }
+
   // getCampReviews(campId: number): Observable<getCampReviews[] |void> {
   //   return this.http.get<getCampReviews[]|void>(`http://localhost:3000/camps?id=${campId}&_embed=reviews`).pipe(
   //     map((reviews: getCampReviews[]|void) => {console.table(reviews); return reviews}))
